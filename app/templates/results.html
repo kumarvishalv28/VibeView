@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-4">
+  <h2 class="text-center mb-4">🎬 Movie Recommendations</h2>
+
+  {% if not recommendations.empty %}
+    <div class="row">
+      {% for _, movie in recommendations.iterrows() %}
+        <div class="col-md-4 mb-4">
+          <div class="card bg-dark text-light h-100 shadow-lg border-info">
+            <img src="{{ movie.poster_url }}" class="card-img-top" alt="{{ movie.primaryTitle }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.primaryTitle }}</h5>
+              <p class="card-text">
+                <strong>Year:</strong> {{ movie.startYear }}<br>
+                <strong>Genre:</strong> {{ movie.genres }}<br>
+                <strong>Rating:</strong> ⭐ {{ movie.averageRating }}
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="/" class="btn btn-outline-light me-2">🔙 Change Filters</a>
+      <a href="/retry" class="btn btn-outline-info me-2">🔁 Try Again with Same Filter</a>
+      <a href="/reset" class="btn btn-outline-warning">🔄 Reset & Random</a>
+    </div>
+
+  {% else %}
+    <div class="alert alert-danger text-center">
+      😔 Sorry! No movies found for selected filters.
+    </div>
+    <div class="text-center mt-4">
+      <a href="/" class="btn btn-outline-light me-2">🔙 Change Filters</a>
+      <a href="/reset" class="btn btn-outline-warning">🔄 Reset & Random</a>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

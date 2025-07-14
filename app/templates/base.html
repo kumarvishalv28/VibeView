@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VibeView: Movie Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("{{ url_for('static', filename='images/background.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            width: 90%;
+            max-width: 800px;
+            margin: 60px auto;
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.4);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #ff4ec7, #ffa7a7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            color: #ffd6f6;
+            margin-bottom: 25px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        select {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1rem;
+            margin: 10px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .btn {
+            background-color: #ff2b75;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff5396;
+        }
+
+        .movie-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .movie-box {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px auto;
+            box-shadow: 0 0 12px rgba(255, 105, 180, 0.3);
+            text-align: center;
+        }
+
+        .movie-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .movie-details {
+            margin: 8px 0;
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+        .poster {
+            max-width: 200px;
+            height: auto;
+            margin-top: 12px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+        }
+
+        a {
+            color: #ff96d5;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 VibeView: Movie Recommender</h1>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

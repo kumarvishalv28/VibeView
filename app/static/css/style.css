@@ -1,0 +1,64 @@
+body {
+    background: url('/static/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    backdrop-filter: brightness(0.7); /* darken bg slightly */
+}
+
+.container {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.7); /* transparent black */
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+h1, h2 {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 1px 1px 5px #ff69b4;
+}
+
+select, button {
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #ff2e6e;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 0, 98, 0.4);
+}
+
+button:hover {
+    background-color: #ff5c8a;
+    box-shadow: 0 6px 18px rgba(255, 0, 98, 0.6);
+}
+
+.poster {
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+}
+
+.poster:hover {
+    transform: scale(1.05);
+}
+
+a {
+    color: #ff69b4;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
